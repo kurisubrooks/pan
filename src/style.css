@@ -1,0 +1,81 @@
+* {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+toast {
+    transition: background-color 0.1s ease;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    display: block;
+    width: 24em;
+    background-color: rgb(245,245,245);
+    border-radius: 4px;
+    height: 64px;
+    color: rgb(33, 33, 33);
+    margin-bottom: 15px;
+    padding: 4px 6px;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    box-shadow: 0px 10px 25px -16px rgba(0,0,0,0.75);
+}
+
+toast.pill {
+    width: 18em;
+    padding: 0;
+    border-radius: 36px;
+    padding-right: 20px;
+}
+
+toast:hover, 
+toast:active, 
+toast:focus {
+    background-color: rgb(255, 255, 255);
+}
+
+toast img.toast-img {
+    float: left;
+    margin: 7px;
+    margin-right: 14px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+toast.pill img.toast-img {
+    float: left;
+    margin: 0;
+    margin-right: 14px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 4px solid #fff;
+}
+
+toast .toast-title {
+    font-weight: 400;
+    padding-top: 8px;
+    display: inline-block;
+    font-size: 20px;
+}
+
+toast .toast-title .toast-time {
+    position: relative;
+    right: 0;
+    display: inline-block;
+    float: right;
+    font-size: 14px;
+    color: rgb(97, 97, 97);
+    font-weight: 500;
+}
+
+toast .toast-content {
+    padding-top: 5px;
+    font-weight: 500;
+    color: rgb(97, 97, 97);
+    font-size: 16px;
+}

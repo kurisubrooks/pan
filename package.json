@@ -1,0 +1,10 @@
+{
+    "name": "pan",
+    "version": "0.0.1",
+    "description": "desktop toast",
+    "main": "src/index.js",
+    "author": "kurisubrooks",
+    "license": "ISC",
+    "dependencies": {},
+    "scripts": {}
+}
