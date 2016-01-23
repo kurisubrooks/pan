@@ -3,14 +3,18 @@
     "main": "index.html",
     "version": "0.0.1",
     "chromium-args": "--disable-gpu --force-cpu-draw --enable-transparent-visuals",
-    "window": {
-        "show": true,
-        "always-on-top": true,
-        "toolbar": false,
-        "show_in_taskbar": true,
-        "transparent": true,
-        "frame": false,
-        "visible-on-all-workspaces": true,
-        "resizable": false
-    }
+	"window": {
+		"show": true,
+		"always-on-top": true,
+		"toolbar": false,
+		"show_in_taskbar": true,
+		"transparent": true,
+		"frame": false,
+		"visible-on-all-workspaces": true,
+		"resizable": false,
+		"min_width": 1,
+		"min_height": 1,
+		"height": 1,
+		"width": 1
+	}
 }
