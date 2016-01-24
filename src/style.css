@@ -5,14 +5,14 @@
 }
 
 body {
-	overflow: hidden;
-	margin: 0;
-	padding: 0;
-	border: none;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    border: none;
 }
 
 .container {
-	width: auto !important;
+    width: 420px;
 }
 
 toast {
