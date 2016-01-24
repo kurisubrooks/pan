@@ -1,8 +1,13 @@
 var gui = require("nw.gui"),
     window = gui.Window.get();
-    window.moveTo(window.screen.availWidth / 2, 0);
 
 $(function() {
+	function resize() {
+		window.resizeTo($(document).width(), $(document).height());
+		window.moveTo((window.screen.availWidth - $(document).width()) / 2, 0);
+	}
+	resize();
+
     function summon(options) {
         var toast = $('<toast></toast>', {class: options.type === 'pill' ? 'pill' : '', 'data-action': options.action ? options.action : '', style: 'display: none'});
         toast.append($('<img></img>', {class: 'toast-img', src: options.icon ? options.icon : 'default.png'}));
@@ -10,16 +15,17 @@ $(function() {
         toast.append($('<div></div>', {class: 'toast-content', text: options.content}));
         if (options.sound) new Audio('audio.mp3').play();
         $('.container').append(toast);
-        $('toast').slideDown('fast');
-        window.resizeTo($(document).width(), $(document).height());
-        window.moveTo((window.screen.availWidth - $(document).width()) / 2, 0);
+		window.resizeTo(window.screen.availWidth, window.screen.availHeight);
+        toast.slideDown('fast', function() {
+			resize();
+		});
     }
 
     function pan(options) {
         if (typeof options === "object" && options.title && options.content) summon(options);
         else throw new Error("Options should be a variable containing title and content.");
     }
-    
+
     $('toast').click($('toast').fadeOut('fast'));
 
     pan({
@@ -29,7 +35,7 @@ $(function() {
         action: undefined,
         sound: null
     });
-    
+
     $('#bx').click(function(){
         pan({
             title: 'Notification',
