@@ -3,19 +3,19 @@ var gui = require("nw.gui"),
 
 $(function() {
 	function resize() {
-		window.resizeTo($(document).width(), $(document).height());
-		window.moveTo((window.screen.availWidth - $(document).width()) / 2, 0);
+		window.resizeTo($(".container").width(), $(".container").height());
+		window.moveTo((window.screen.availWidth - $(".container").width()) / 2, 0);
 	}
 	resize();
 
     function summon(options) {
+		window.resizeTo(window.screen.availWidth, window.screen.availHeight);
         var toast = $('<toast></toast>', {class: options.type === 'pill' ? 'pill' : '', 'data-action': options.action ? options.action : '', style: 'display: none'});
         toast.append($('<img></img>', {class: 'toast-img', src: options.icon ? options.icon : 'default.png'}));
         toast.append($('<div></div>', {class: 'toast-title', text: options.title}));
         toast.append($('<div></div>', {class: 'toast-content', text: options.content}));
         if (options.sound) new Audio('audio.mp3').play();
         $('.container').append(toast);
-		window.resizeTo(window.screen.availWidth, window.screen.availHeight);
         toast.slideDown('fast', function() {
 			resize();
 		});
@@ -29,9 +29,9 @@ $(function() {
     $('toast').click($('toast').fadeOut('fast'));
 
     pan({
-        title: 'Notification',
-        content: 'Woo Hoo!',
-        icon: 'https://www.gravatar.com/avatar/a77d7e92acc92dad1c557bba3024914c?s=512',
+        title: 'Squarespace',
+        content: 'Build it beautiful.',
+        icon: 'https://yt3.ggpht.com/-QGhAvSy7npM/AAAAAAAAAAI/AAAAAAAAAAA/Uom6Bs6gR9Y/s900-c-k-no/photo.jpg',
         action: undefined,
         sound: null
     });
