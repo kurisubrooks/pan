@@ -2,14 +2,14 @@ var gui = require("nw.gui"),
     window = gui.Window.get();
 
 $(function() {
-	function resize() {
-		window.resizeTo($(".container").width(), $(".container").height());
-		window.moveTo((window.screen.availWidth - $(".container").width()) / 2, 0);
-	}
-	resize();
+    function resize() {
+        window.resizeTo($(".container").width(), $(".container").height());
+        window.moveTo((window.screen.availWidth - $(".container").width()) / 2, 0);
+    }
+    resize();
 
     function summon(options) {
-		window.resizeTo(window.screen.availWidth, window.screen.availHeight);
+        window.resizeTo(window.screen.availWidth, window.screen.availHeight);
         var toast = $('<toast></toast>', {class: options.type === 'pill' ? 'pill' : '', 'data-action': options.action ? options.action : '', style: 'display: none'});
         toast.append($('<img></img>', {class: 'toast-img', src: options.icon ? options.icon : 'default.png'}));
         toast.append($('<div></div>', {class: 'toast-title', text: options.title}));
@@ -17,8 +17,8 @@ $(function() {
         if (options.sound) new Audio('audio.mp3').play();
         $('.container').append(toast);
         toast.slideDown('fast', function() {
-			resize();
-		});
+            resize();
+        });
     }
 
     function pan(options) {
