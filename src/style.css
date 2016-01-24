@@ -4,6 +4,10 @@
     user-select: none;
 }
 
+body {
+	overflow: hidden;
+}
+
 toast {
     transition: background-color 0.1s ease;
     font-family: "Roboto", sans-serif;
@@ -31,8 +35,8 @@ toast.pill {
     padding-right: 20px;
 }
 
-toast:hover, 
-toast:active, 
+toast:hover,
+toast:active,
 toast:focus {
     background-color: rgb(255, 255, 255);
 }
